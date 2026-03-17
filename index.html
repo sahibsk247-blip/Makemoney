@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prediction Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- GAME PAGE -->
+<div id="gamePage">
+
+<h2>Balance ₹ <span id="balance">0</span></h2>
+
+<div class="topRow">
+<span>Period: <b id="period">1001</b></span>
+<span>Result: <b id="result">?</b></span>
+<span>Next: <b id="next">1002</b></span>
+<span>Timer: <b id="timer">30</b></span>
+</div>
+
+<h3>Color Bet</h3>
+
+<div class="colors">
+<button class="green" onclick="betColor('green')">Green</button>
+<button class="violet" onclick="betColor('violet')">Violet</button>
+<button class="red" onclick="betColor('red')">Red</button>
+</div>
+
+<h3>Numbers</h3>
+
+<div class="numbers">
+
+<button onclick="betNumber(0)" class="mix0">0</button>
+<button onclick="betNumber(1)" class="green">1</button>
+<button onclick="betNumber(2)" class="red">2</button>
+<button onclick="betNumber(3)" class="green">3</button>
+<button onclick="betNumber(4)" class="red">4</button>
+<button onclick="betNumber(5)" class="mix5">5</button>
+<button onclick="betNumber(6)" class="red">6</button>
+<button onclick="betNumber(7)" class="green">7</button>
+<button onclick="betNumber(8)" class="red">8</button>
+<button onclick="betNumber(9)" class="green">9</button>
+
+</div>
+
+<div class="tables">
+
+<div>
+<h3>Result History</h3>
+<table id="history">
+<tr>
+<th>Period</th>
+<th>Number</th>
+<th>Color</th>
+</tr>
+</table>
+</div>
+
+<div>
+<h3>Bet History</h3>
+<table id="betHistory">
+<tr>
+<th>Bet</th>
+<th>Amount</th>
+</tr>
+</table>
+</div>
+
+</div>
+
+</div>
+
+<!-- SUPPORT PAGE -->
+<div id="supportPage" class="hidden">
+
+<h2>Customer Support</h2>
+
+<ul>
+<li>Bet not placed</li>
+<li>Recharge not received</li>
+<li>Withdrawal pending</li>
+<li>Game result confusion</li>
+<li>Account issue</li>
+</ul>
+
+<button onclick="openPage('gamePage')">Back</button>
+
+</div>
+
+<!-- ACCOUNT PAGE -->
+<div id="accountPage" class="hidden">
+
+<h2>My Account</h2>
+
+<p>Balance ₹ <span id="balance2">0</span></p>
+
+<h3>Recharge</h3>
+
+<button onclick="recharge()">UPI QR</button>
+<button onclick="recharge()">Direct UPI</button>
+<button onclick="recharge()">Bank Transfer</button>
+<button onclick="recharge()">PhonePe</button>
+<button onclick="recharge()">Google Pay</button>
+
+<h3>Promotion</h3>
+
+<button onclick="showReferral()">Referral Link</button>
+
+<h3>Deposit History</h3>
+<ul id="depositHistory"></ul>
+
+<h3>Withdrawal History</h3>
+<ul id="withdrawHistory"></ul>
+
+<button onclick="openPage('gamePage')">Back</button>
+
+</div>
+
+<!-- BOTTOM MENU -->
+
+<div class="menu">
+
+<button onclick="openPage('gamePage')">Game</button>
+<button onclick="openPage('supportPage')">Support</button>
+<button onclick="openPage('accountPage')">My Account</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
