@@ -130,5 +130,31 @@
 
 <script src="script.js"></script>
 
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+  import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDZWfenJ0d7HvmPsHpzz7Hy92J8fp7hC90",
+    authDomain: "makemoney-ce810.firebaseapp.com",
+    projectId: "makemoney-ce810",
+    storageBucket: "makemoney-ce810.firebasestorage.app",
+    messagingSenderId: "1031189536519",
+    appId: "1:1031189536519:web:2c1f1ae9a694d311eaafa2",
+    measurementId: "G-2TQV7LX5DN"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  set(ref(db, "test/message"), {
+    text: "Firebase connected 🔥"
+  });
+
+  onValue(ref(db, "test/message"), (snapshot) => {
+    console.log(snapshot.val());
+  });
+</script>
+
 </body>
 </html>
